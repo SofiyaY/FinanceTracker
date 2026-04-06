@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.financetracker.controller.BudgetController"
+      style="-fx-background-color:#F3F4F6;">
+
+    <!-- Header -->
+    <HBox style="-fx-background-color:#111827; -fx-padding:24 32 24 32;" alignment="CENTER_LEFT">
+        <VBox HBox.hgrow="ALWAYS" spacing="3">
+            <Label text="Budsjett" style="-fx-font-size:22px;-fx-font-weight:bold;-fx-text-fill:white;"/>
+            <Label text="Månedlige grenser per kategori" style="-fx-font-size:12px;-fx-text-fill:#6B7280;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Toolbar -->
+    <HBox style="-fx-background-color:white;-fx-padding:12 32 12 32;
+                 -fx-border-color:#E5E7EB;-fx-border-width:0 0 1 0;"
+          spacing="12" alignment="CENTER_LEFT">
+        <Label text="Måned:" style="-fx-font-weight:bold;-fx-text-fill:#374151;"/>
+        <ComboBox fx:id="monthPicker" prefWidth="145"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnAddBudget" text="+ Legg til budsjett"
+                styleClass="btn-primary" onAction="#handleAddBudget"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="budget-scroll"
+                style="-fx-background-color:#F3F4F6;-fx-background:#F3F4F6;">
+        <VBox fx:id="budgetList" spacing="14"
+              style="-fx-padding:24 32 24 32;-fx-background-color:#F3F4F6;"/>
+    </ScrollPane>
+
+</VBox>

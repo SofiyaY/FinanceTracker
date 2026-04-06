@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.financetracker.controller.MainController">
+
+    <!-- ── Sidebar ────────────────────────────────────────────────────────── -->
+    <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="230">
+
+        <!-- Logo -->
+        <HBox styleClass="app-logo-box" alignment="CENTER_LEFT" spacing="12">
+            <Label text="&#x25CF;" style="-fx-text-fill:#3B82F6; -fx-font-size:20px;"/>
+            <VBox spacing="1">
+                <Label text="FinanceTracker" styleClass="app-title"/>
+                <Label text="PERSONLIG ØKONOMI" styleClass="app-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <!-- Nav -->
+        <VBox styleClass="nav-section" VBox.vgrow="ALWAYS" spacing="2">
+            <Label text="OVERSIKT" styleClass="nav-group-label"/>
+            <Button fx:id="btnDashboard"
+                    text="  &#x2302;  Dashboard"
+                    styleClass="nav-btn"
+                    maxWidth="Infinity"
+                    onAction="#showDashboard"/>
+
+            <Label text="ØKONOMI" styleClass="nav-group-label"/>
+            <Button fx:id="btnTransactions"
+                    text="  &#x21C4;  Transaksjoner"
+                    styleClass="nav-btn"
+                    maxWidth="Infinity"
+                    onAction="#showTransactions"/>
+            <Button fx:id="btnBudget"
+                    text="  &#x25A6;  Budsjett"
+                    styleClass="nav-btn"
+                    maxWidth="Infinity"
+                    onAction="#showBudget"/>
+
+            <Label text="RAPPORTER" styleClass="nav-group-label"/>
+            <Button fx:id="btnStatistics"
+                    text="  &#x25FC;  Statistikk"
+                    styleClass="nav-btn"
+                    maxWidth="Infinity"
+                    onAction="#showStatistics"/>
+        </VBox>
+
+    </VBox>
+
+    <!-- ── Main content ───────────────────────────────────────────────────── -->
+    <StackPane fx:id="contentArea" styleClass="content-area" HBox.hgrow="ALWAYS"/>
+
+</HBox>

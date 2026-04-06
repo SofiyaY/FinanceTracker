@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.financetracker.controller.TransactionDialogController"
+            prefWidth="400">
+
+    <content>
+        <VBox spacing="14" style="-fx-padding: 10 0 0 0;">
+
+            <!-- Type -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Type:" minWidth="90"/>
+                <HBox spacing="16">
+                    <RadioButton fx:id="radioExpense" text="Utgift" selected="true">
+                        <toggleGroup><ToggleGroup fx:id="typeGroup"/></toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="radioIncome" text="Inntekt" toggleGroup="$typeGroup"/>
+                </HBox>
+            </HBox>
+
+            <!-- Date -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Dato:" minWidth="90"/>
+                <DatePicker fx:id="fieldDate" prefWidth="200"/>
+            </HBox>
+
+            <!-- Name -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Navn:" minWidth="90"/>
+                <TextField fx:id="fieldName" promptText="Beskrivelse" prefWidth="250"/>
+            </HBox>
+
+            <!-- Category -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Kategori:" minWidth="90"/>
+                <ComboBox fx:id="fieldCategory" prefWidth="200"/>
+            </HBox>
+
+            <!-- Amount -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Beløp (kr):" minWidth="90"/>
+                <TextField fx:id="fieldAmount" promptText="0.00" prefWidth="200"/>
+            </HBox>
+
+            <!-- Note -->
+            <HBox spacing="20" alignment="TOP_LEFT">
+                <Label text="Notat:" minWidth="90"/>
+                <TextArea fx:id="fieldNote" prefWidth="250" prefHeight="60" wrapText="true"
+                          promptText="Valgfritt notat..."/>
+            </HBox>
+
+        </VBox>
+    </content>
+</DialogPane>

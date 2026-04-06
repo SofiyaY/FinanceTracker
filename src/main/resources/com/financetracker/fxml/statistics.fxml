@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.financetracker.controller.StatisticsController"
+      style="-fx-background-color:#F3F4F6;">
+
+    <!-- Header -->
+    <HBox style="-fx-background-color:#111827; -fx-padding:24 32 24 32;" alignment="CENTER_LEFT">
+        <VBox spacing="3">
+            <Label text="Statistikk" style="-fx-font-size:22px;-fx-font-weight:bold;-fx-text-fill:white;"/>
+            <Label text="Trender og kategorianalyse" style="-fx-font-size:12px;-fx-text-fill:#6B7280;"/>
+        </VBox>
+    </HBox>
+
+    <VBox style="-fx-padding:24 32 24 32;" spacing="20" VBox.vgrow="ALWAYS">
+
+        <!-- Line chart card -->
+        <VBox styleClass="card">
+            <Label text="Balanse over tid" styleClass="card-title"/>
+            <LineChart fx:id="lineChart" prefHeight="260" animated="false" createSymbols="true">
+                <xAxis><CategoryAxis fx:id="lineXAxis"/></xAxis>
+                <yAxis><NumberAxis fx:id="lineYAxis" label="kr"/></yAxis>
+            </LineChart>
+        </VBox>
+
+        <!-- Summary table card -->
+        <VBox styleClass="card" VBox.vgrow="ALWAYS">
+            <Label text="Utgifter per kategori per måned" styleClass="card-title"/>
+            <TableView fx:id="summaryTable" VBox.vgrow="ALWAYS"
+                       style="-fx-padding-top:10;">
+                <columns>
+                    <TableColumn fx:id="colMonth" text="Måned" prefWidth="110"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+    </VBox>
+</VBox>

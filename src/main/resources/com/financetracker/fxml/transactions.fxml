@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.financetracker.controller.TransactionsController"
+      style="-fx-background-color:#F3F4F6;">
+
+    <!-- Header -->
+    <HBox style="-fx-background-color:#111827; -fx-padding:24 32 24 32;" alignment="CENTER_LEFT">
+        <VBox HBox.hgrow="ALWAYS" spacing="3">
+            <Label text="Transaksjoner" style="-fx-font-size:22px;-fx-font-weight:bold;-fx-text-fill:white;"/>
+            <Label text="Alle inn- og utbetalinger" style="-fx-font-size:12px;-fx-text-fill:#6B7280;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Toolbar -->
+    <HBox styleClass="toolbar" spacing="10" alignment="CENTER_LEFT"
+          style="-fx-margin:20 32 0 32; -fx-padding:12 20 12 20; -fx-background-color:white;
+                 -fx-border-color:#E5E7EB; -fx-border-width:0 0 1 0;">
+        <Label text="Måned:" style="-fx-text-fill:#374151;-fx-font-weight:bold;"/>
+        <ComboBox fx:id="filterMonth" prefWidth="145"/>
+        <Label text="Kategori:" style="-fx-text-fill:#374151;-fx-font-weight:bold;"/>
+        <ComboBox fx:id="filterCategory" prefWidth="165"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnAdd"    text="+ Ny transaksjon" styleClass="btn-primary"  onAction="#handleAdd"/>
+        <Button fx:id="btnEdit"   text="Rediger"          styleClass="btn-secondary" onAction="#handleEdit"/>
+        <Button fx:id="btnDelete" text="Slett"            styleClass="btn-danger"    onAction="#handleDelete"/>
+        <Button fx:id="btnExport" text="&#x2913; JSON"   styleClass="btn-secondary" onAction="#handleExport"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS" styleClass="transactions-table"
+               style="-fx-margin:16 32 24 32;">
+        <columns>
+            <TableColumn fx:id="colDate"     text="Dato"      prefWidth="115"/>
+            <TableColumn fx:id="colName"     text="Navn"      prefWidth="260"/>
+            <TableColumn fx:id="colCategory" text="Kategori"  prefWidth="150"/>
+            <TableColumn fx:id="colAmount"   text="Beløp"     prefWidth="140"
+                         style="-fx-alignment:CENTER-RIGHT;"/>
+        </columns>
+    </TableView>
+
+</VBox>

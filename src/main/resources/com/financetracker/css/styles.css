@@ -1,0 +1,522 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FinanceTracker – Premium UI
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Root ─────────────────────────────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #111827;
+    -fx-padding: 0 0 24 0;
+    -fx-min-width: 230;
+    -fx-max-width: 230;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 16, 0, 4, 0);
+}
+
+.app-logo-box {
+    -fx-padding: 24 20 24 20;
+    -fx-border-color: transparent transparent #1F2937 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.app-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.app-subtitle {
+    -fx-font-size: 10px;
+    -fx-text-fill: #6B7280;
+    -fx-letter-spacing: 1;
+}
+
+.nav-section {
+    -fx-padding: 16 0 0 0;
+}
+
+.nav-group-label {
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-padding: 12 20 4 20;
+    -fx-letter-spacing: 1.5;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 13px;
+    -fx-padding: 12 20 12 20;
+    -fx-alignment: CENTER-LEFT;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #1F2937;
+    -fx-text-fill: #E5E7EB;
+}
+
+.nav-active {
+    -fx-background-color: #1F2937 !important;
+    -fx-text-fill: white !important;
+    -fx-border-color: transparent transparent transparent #3B82F6;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* ── Content Area ─────────────────────────────────────────────────────────── */
+.content-area {
+    -fx-background-color: #F3F4F6;
+}
+
+.view-scroll {
+    -fx-background-color: #F3F4F6;
+    -fx-background: #F3F4F6;
+}
+.view-scroll > .viewport { -fx-background-color: #F3F4F6; }
+
+.view-container {
+    -fx-padding: 0 0 28 0;
+    -fx-spacing: 20;
+    -fx-background-color: #F3F4F6;
+}
+
+/* ── Dashboard Banner ─────────────────────────────────────────────────────── */
+.dashboard-banner {
+    -fx-background-color: linear-gradient(to right, #1D4ED8, #2563EB, #4F46E5);
+    -fx-padding: 28 32 28 32;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.4), 16, 0, 0, 6);
+}
+
+.banner-greeting {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.banner-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-padding: 3 0 0 0;
+}
+
+.banner-date {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 8;
+    -fx-padding: 8 16 8 16;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* ── View title/header inside page ───────────────────────────────────────── */
+.page-header {
+    -fx-padding: 24 32 0 32;
+}
+
+.view-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.section-title {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+    -fx-padding: 0 0 8 0;
+    -fx-letter-spacing: 0.5;
+}
+
+/* ── Inner padded content ─────────────────────────────────────────────────── */
+.inner-content {
+    -fx-padding: 0 32 0 32;
+    -fx-spacing: 20;
+}
+
+/* ── Metric Cards (colored) ───────────────────────────────────────────────── */
+.metric-row { -fx-spacing: 16; }
+
+.metric-card {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-width: 0;
+    -fx-padding: 22 22 22 22;
+    -fx-spacing: 10;
+    -fx-min-width: 155;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 16, 0, 0, 6);
+    -fx-cursor: default;
+}
+
+.metric-card-blue   { -fx-background-color: linear-gradient(to bottom right, #1E3A8A, #2563EB); }
+.metric-card-green  { -fx-background-color: linear-gradient(to bottom right, #064E3B, #059669); }
+.metric-card-red    { -fx-background-color: linear-gradient(to bottom right, #7F1D1D, #DC2626); }
+.metric-card-purple { -fx-background-color: linear-gradient(to bottom right, #3B0764, #7C3AED); }
+
+.metric-icon {
+    -fx-font-size: 28px;
+    -fx-text-fill: rgba(255,255,255,0.18);
+}
+
+.metric-label-white {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.65);
+    -fx-letter-spacing: 0.8;
+}
+
+.metric-value-white {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.metric-change-white {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255,255,255,0.7);
+}
+
+/* ── White Cards ──────────────────────────────────────────────────────────── */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 12, 0, 0, 4);
+}
+
+.card-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+/* ── Glass Buttons ────────────────────────────────────────────────────────── */
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #3B82F6, #2563EB);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.3) rgba(255,255,255,0.1) rgba(0,0,0,0.15) rgba(255,255,255,0.15);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.45), 8, 0, 0, 3);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #60A5FA, #3B82F6);
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.65), 12, 0, 0, 5);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: linear-gradient(to bottom, #1D4ED8, #2563EB);
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.3), 4, 0, 0, 1);
+}
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: #2563EB;
+    -fx-background-radius: 8;
+    -fx-border-color: #BFDBFE;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.12), 6, 0, 0, 2);
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #EFF6FF;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.22), 8, 0, 0, 3);
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #F87171, #DC2626);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.3) rgba(255,255,255,0.1) rgba(0,0,0,0.15) rgba(255,255,255,0.15);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(220,38,38,0.4), 8, 0, 0, 3);
+}
+
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #FCA5A5, #EF4444);
+    -fx-effect: dropshadow(gaussian, rgba(220,38,38,0.6), 12, 0, 0, 5);
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+.toolbar {
+    -fx-background-color: white;
+    -fx-padding: 12 16 12 16;
+    -fx-background-radius: 12;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);
+}
+
+/* ── Table ────────────────────────────────────────────────────────────────── */
+.transactions-table {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 12, 0, 0, 3);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F9FAFB;
+    -fx-background-radius: 14 14 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.3;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F3F4F6 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 2 0 2 0;
+    -fx-text-fill: #111827;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #EFF6FF;
+    -fx-text-fill: #111827;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #F9FAFB;
+}
+
+.table-cell {
+    -fx-text-fill: #111827;
+}
+
+/* ── Charts – fix axis label visibility ───────────────────────────────────── */
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 4 4 4 4;
+}
+
+.chart-plot-background {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 6;
+}
+
+.chart-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.axis-label {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 11px;
+}
+
+.axis {
+    -fx-tick-label-fill: #6B7280;
+    -fx-minor-tick-visible: false;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #374151;
+}
+
+.chart-vertical-grid-lines  { -fx-stroke: #F3F4F6; }
+.chart-horizontal-grid-lines { -fx-stroke: #F3F4F6; }
+.chart-vertical-zero-line   { -fx-stroke: #D1D5DB; }
+
+.default-color0.chart-bar { -fx-bar-fill: #3B82F6; }
+.default-color1.chart-bar { -fx-bar-fill: #F87171; }
+
+.default-color0.chart-bar:hover { -fx-bar-fill: #2563EB; }
+.default-color1.chart-bar:hover { -fx-bar-fill: #DC2626; }
+
+.default-color0.chart-series-line {
+    -fx-stroke: #3B82F6;
+    -fx-stroke-width: 2.5;
+}
+.default-color0.chart-line-symbol {
+    -fx-background-color: white, #3B82F6;
+    -fx-background-radius: 5;
+    -fx-background-insets: 2, 0;
+}
+
+/* ── Budget ───────────────────────────────────────────────────────────────── */
+.budget-scroll, .budget-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.budget-list { -fx-padding: 2 0 4 0; }
+
+.budget-category-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.budget-amount        { -fx-text-fill: #374151; -fx-font-size: 13px; }
+.budget-amount-over   { -fx-text-fill: #DC2626; -fx-font-weight: bold; -fx-font-size: 13px; }
+.budget-percent       { -fx-text-fill: #9CA3AF; -fx-font-size: 12px; }
+
+.progress-bar-normal { -fx-accent: #3B82F6; }
+
+.progress-bar-normal > .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 5;
+}
+.progress-bar-normal > .bar {
+    -fx-background-color: linear-gradient(to right, #3B82F6, #60A5FA);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.progress-bar-over > .track {
+    -fx-background-color: #FEE2E2;
+    -fx-background-radius: 5;
+}
+.progress-bar-over > .bar {
+    -fx-background-color: linear-gradient(to right, #DC2626, #F87171);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+/* ── Monthly overview rows ────────────────────────────────────────────────── */
+.month-row {
+    -fx-padding: 10 4 10 4;
+    -fx-border-color: transparent transparent #F3F4F6 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.month-row-label { -fx-font-weight: bold; -fx-text-fill: #374151; -fx-font-size: 13px; -fx-min-width: 85; }
+.month-income-label  { -fx-text-fill: #059669; -fx-font-size: 13px; -fx-min-width: 120; -fx-alignment: CENTER-RIGHT; }
+.month-expense-label { -fx-text-fill: #DC2626; -fx-font-size: 13px; -fx-min-width: 120; -fx-alignment: CENTER-RIGHT; }
+.month-savings-label { -fx-font-weight: bold; -fx-font-size: 13px; -fx-min-width: 100; -fx-alignment: CENTER-RIGHT; }
+.savings-positive    { -fx-text-fill: #7C3AED; }
+.savings-negative    { -fx-text-fill: #DC2626; }
+
+/* ── Recent transactions ──────────────────────────────────────────────────── */
+.recent-tx-row {
+    -fx-padding: 10 4 10 4;
+    -fx-border-color: transparent transparent #F3F4F6 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.recent-tx-name     { -fx-text-fill: #111827; -fx-font-size: 13px; }
+.recent-tx-cat      { -fx-text-fill: #9CA3AF; -fx-font-size: 11px; }
+.recent-tx-date     { -fx-text-fill: #9CA3AF; -fx-font-size: 11px; -fx-min-width: 90; -fx-alignment: CENTER-RIGHT; }
+.recent-tx-positive { -fx-text-fill: #059669; -fx-font-weight: bold; -fx-min-width: 115; -fx-alignment: CENTER-RIGHT; }
+.recent-tx-negative { -fx-text-fill: #DC2626; -fx-font-weight: bold; -fx-min-width: 115; -fx-alignment: CENTER-RIGHT; }
+
+/* ── ComboBox & DatePicker ────────────────────────────────────────────────── */
+.combo-box, .date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3B82F6;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.2), 6, 0, 0, 0);
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 4);
+}
+
+/* ── TextField / TextArea ─────────────────────────────────────────────────── */
+.text-field, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12 8 12;
+    -fx-text-fill: #111827;
+    -fx-prompt-text-fill: #9CA3AF;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3B82F6;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.2), 6, 0, 0, 0);
+}
+
+/* ── Empty label ──────────────────────────────────────────────────────────── */
+.empty-label {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-style: italic;
+    -fx-padding: 20;
+}
+
+/* ── Scroll bars ──────────────────────────────────────────────────────────── */
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track { -fx-background-color: transparent; }
+
+.scroll-bar .thumb {
+    -fx-background-color: #D1D5DB;
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9CA3AF;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* ── Dialog ───────────────────────────────────────────────────────────────── */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 24, 0, 0, 8);
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #F9FAFB;
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ── Budget view ──────────────────────────────────────────────────────────── */
+.budget-scroll .scroll-pane { -fx-background: transparent; }
